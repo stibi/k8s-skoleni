@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: muj-java-helloworld
+spec:
+  selector:
+    matchLabels:
+      app: muj-java-helloworld
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: muj-java-helloworld
+    spec:
+      containers:
+      - name: java-app
+        image: stibi/java-hello-world
+        env:
+        - name: MOJE_TEST_ENV
+          value: "Hello from the pod"
+        - name: FOO
+          value: bar
+        ports:
+          - name: spring
+            containerPort: 8080
+            protocol: TCP

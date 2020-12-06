@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: static-poc
+  labels:
+    app: java-hello-world
+spec:
+  containers:
+    - name: java-app
+      image: stibi/java-hello-world
+      env:
+      - name: MOJE_TEST_ENV
+        value: "Hello from the environment"
+      - name: FOO
+        value: bar
+      ports:
+        - name: spring
+          containerPort: 8080
+          protocol: TCP
