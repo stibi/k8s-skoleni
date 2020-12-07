@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: muj-java-helloworld
+  name: TODO-VYPLN-UNIKATNI-JMENO (lowercase, pomlcka, pouze alfanumericke znaky)
 spec:
   selector:
     matchLabels:
-      app: muj-java-helloworld
+      app: TODO-STEJNE-JAKO-metadata.name
   replicas: 1
   template:
     metadata:
       labels:
-        app: muj-java-helloworld
+        app: TODO-STEJNE-JAKO-metadata.name
     spec:
       containers:
       - name: java-app
