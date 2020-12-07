@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: static-poc
+  name: TODO_VYPLN_UNIKATNI_JMENO (lowercase, pomlcka, zadne spec znaky)
   labels:
     app: java-hello-world
 spec:
