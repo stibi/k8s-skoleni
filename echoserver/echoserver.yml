@@ -37,7 +37,7 @@ metadata:
   name: echoserver
 spec:
   rules:
-  - host: foo.app.k8skoleni.cz
+  - host: echoserver.app.k8skoleni.cz
     http:
       paths:
       - path: /
