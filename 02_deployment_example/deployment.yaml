@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: TODO-VYPLN-UNIKATNI-JMENO (lowercase, pomlcka, pouze alfanumericke znaky)
+  name: TODO-VYPLN-UNIKATNI-JMENO (lowercase, pomlcka, zadne spec znaky)
 spec:
   selector:
     matchLabels:
