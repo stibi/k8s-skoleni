@@ -51,14 +51,14 @@ spec:
             periodSeconds: 5
           volumeMounts:
           - mountPath: /opt
-            name: opt-from-host
+            name: opt-from-nfs
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       volumes:
-      - name: opt-from-host
-        hostPath:
-          path: /opt/helloword-data
-          type: DirectoryOrCreate
+      - name: opt-from-nfs
+        nfs:
+          server: {{ .Values.nfs.server_ip }}
+          path: {{ .Values.nfs.path }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
