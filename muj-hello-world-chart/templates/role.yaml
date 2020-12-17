@@ -1,8 +1,7 @@
 apiVersion: rbac.authorization.k8s.io/v1
-kind: Role
+kind: ClusterRole
 metadata:
   name: {{ include "muj-hello-world-chart.fullname" . }}
-  namespace: default
 rules:
 - apiGroups: [""] # "" indicates the core API group
   resources: ["pods"]
