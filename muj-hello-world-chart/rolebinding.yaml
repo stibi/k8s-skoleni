@@ -1,12 +1,13 @@
 apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRoleBinding
+kind: RoleBinding
 metadata:
-  name: {{ include "java-helloworld-chart.fullname" . }}
+  name: {{ include "muj-hello-world-chart.fullname" . }}
+  namespace: default
 subjects:
 - kind: ServiceAccount
-  name: {{ include "java-helloworld-chart.serviceAccountName" . }}
+  name: {{ include "muj-hello-world-chart.serviceAccountName" . }}
   namespace: default
 roleRef:
-  kind: ClusterRole
-  name: {{ include "java-helloworld-chart.fullname" . }}
+  kind: Role
+  name: {{ include "muj-hello-world-chart.fullname" . }}
   apiGroup: rbac.authorization.k8s.io
