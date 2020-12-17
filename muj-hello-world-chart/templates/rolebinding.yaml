@@ -7,6 +7,6 @@ subjects:
   name: {{ include "muj-hello-world-chart.serviceAccountName" . }}
   namespace: default
 roleRef:
-  kind: Role
+  kind: ClusterRole
   name: {{ include "muj-hello-world-chart.fullname" . }}
   apiGroup: rbac.authorization.k8s.io
