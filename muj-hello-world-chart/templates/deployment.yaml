@@ -49,6 +49,12 @@ spec:
               port: http
             initialDelaySeconds: 5
             periodSeconds: 5
+          env:
+            - name: MOJE_TEST_ENV
+              valueFrom:
+                configMapKeyRef:
+                  name: test-config
+                  key: enemies
           volumeMounts:
           - mountPath: /opt
             name: opt-from-nfs
