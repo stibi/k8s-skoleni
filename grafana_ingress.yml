@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: grafana
+spec:
+  rules:
+  - host: grafana.app.k8skoleni.cz
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: prometheus-operator-grafana
+          servicePort: 80

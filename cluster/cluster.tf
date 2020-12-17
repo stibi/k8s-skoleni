@@ -22,7 +22,7 @@ module "k8s_cluster" {
   ssh_fingerprints = ["1e:a0:95:84:96:41:8f:d6:0d:77:bf:85:00:42:18:56"]
 
   controller_count = 1
-  worker_count     = 2
+  worker_count     = 5
 }
 
 resource "digitalocean_loadbalancer" "k8s_public" {
