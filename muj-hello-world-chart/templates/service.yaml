@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "muj-hello-world-chart.fullname" . }}
+  labels:
+    {{- include "muj-hello-world-chart.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "muj-hello-world-chart.selectorLabels" . | nindent 4 }}
